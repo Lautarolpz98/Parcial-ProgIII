@@ -1,17 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Food Store 🍕</title>
+    <link rel="stylesheet" href="/src/pages/client/cliente.css">
 </head>
 
 <body>
-    <h1>Hola desde el cliente</h1>
-    <button id="logoutButton">Logout</button>
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1>🍔 Food Store 🍕</h1>
+
+        <nav class="nav">
+            <a href="#">Inicio</a>
+            <a href="#">Mis Pedidos</a>
+            <a href="#">Carrito</a>
+            <a href="/admin.html">Admin</a>
+        </nav>
+
+        <button id="logoutButton" class="logout">Logout</button>
+    </header>
+
+    <!-- LAYOUT -->
+    <div class="layout">
+
+        <aside class="sidebar">
+            <h3 class="sidebar-title">Categorías</h3>
+            <ul id="lista-categorias" class="category-list"></ul>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- BUSCADOR -->
+            <form class="search">
+                <input type="text" id="search" placeholder="Buscar productos...">
+                <button type="submit">Buscar</button>
+            </form>
+
+            <!-- PRODUCTOS -->
+            <section id="contenedor-productos" class="products"></section>
+
+        </main>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        © 2026 Food Store. Todos los derechos reservados.
+
+        <p>
+            📩 Contacto:
+            <a href="https://www.linkedin.com/in/lautaro-lopez-b56aa7305/?skipRedirect=true" target="_blank">
+                LautaroLopez
+            </a>
+        </p>
+    </footer>
+
+    <script src="./js/data.js"></script>
+    <script src="./js/main.js"></script>
+
     <script type="module" src="/src/main.ts"></script>
     <script type="module" src="./home.ts"></script>
+
 </body>
 
 </html>

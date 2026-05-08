@@ -1,19 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Panel Admin</title>
+    <link rel="stylesheet" href="/src/pages/admin/admin.css">
 </head>
 
 <body>
-    <h1>Hola desde la vista de admin</h1>
-    <button id="logoutButton">Logout</button>
+
+    <header class="header">
+        <h1>Panel de Administración</h1>
+
+        <nav>
+            <a href="/Index.html">← Volver a la tienda</a>
+            <button id="logoutButton">Logout</button>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section>
+            <h2>Gestión de Productos</h2>
+            <button class="btn-primary">+ Nuevo Producto</button>
+        </section>
+
+        <section class="table-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="/assets/img/admin1.png" width="50"></td>
+                        <td>Hamburguesa Triple</td>
+                        <td>Hamburguesas</td>
+                        <td>$7000</td>
+                        <td>50</td>
+                        <td><a href="#">Editar</a> | <a href="#">Borrar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <details class="form-box">
+            <summary>📝 Agregar producto rápido</summary>
+
+            <form>
+                <input type="text" placeholder="Nombre del producto" id="productName">
+                <input type="number" placeholder="Precio" id="productPrice">
+                <input type="number" placeholder="Stock" id="productStock">
+
+                <select id="productCategory">
+                    <option>Hamburguesas</option>
+                    <option>Pizzas</option>
+                    <option>Papas fritas</option>
+                    <option>Otros</option>
+                </select>
+
+                <textarea placeholder="Descripción"></textarea>
+
+                <button type="submit">Agregar Producto</button>
+            </form>
+        </details>
+
+    </main>
+
+    <footer class="footer">
+        <p>Panel de Administración v1.0</p>
+        <small>© 2026 Food Store</small>
+    </footer>
+
     <script type="module" src="./home.ts"></script>
-    <script type="module" src="/src/main.ts"></script>
-
 </body>
-
 
 </html>
