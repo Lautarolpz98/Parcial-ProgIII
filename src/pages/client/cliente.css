@@ -1,4 +1,6 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
 * {
     margin: 0;
     padding: 0;
@@ -6,14 +8,19 @@
     font-family: Arial, sans-serif;
 }
 
-/* BODY */
+/* =========================
+   BODY
+========================= */
 body {
     background: #f4f6f9;
     color: #111;
     min-height: 100vh;
+    line-height: 1.4;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 .header {
     background: #111827;
     color: white;
@@ -22,25 +29,58 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 15px;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .nav {
     display: flex;
     gap: 15px;
+    align-items: center;
 }
 
 .nav a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    transition: 0.2s;
+    font-weight: 600;
+    font-size: 14px;
+
+    transition: 0.2s ease;
+    padding: 6px 8px;
+    border-radius: 6px;
 }
 
 .nav a:hover {
-    opacity: 0.7;
+    background: rgba(255, 255, 255, 0.1);
 }
 
-/* LOGOUT */
+/* =========================
+   CARRITO LINK (MEJORADO)
+========================= */
+.cart-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    text-decoration: none;
+    color: #fff;
+
+    padding: 6px 10px;
+    border-radius: 8px;
+
+    transition: 0.2s ease;
+}
+
+.cart-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================
+   LOGOUT
+========================= */
 .logout {
     background: #ef4444;
     border: none;
@@ -48,59 +88,76 @@ body {
     color: white;
     border-radius: 8px;
     cursor: pointer;
+
+    font-weight: bold;
     transition: 0.2s;
 }
 
 .logout:hover {
     background: #dc2626;
+    transform: scale(1.03);
 }
 
-/* LAYOUT PRINCIPAL */
+/* =========================
+   LAYOUT
+========================= */
 .layout {
     display: grid;
     grid-template-columns: 240px 1fr;
     gap: 20px;
+
     padding: 20px;
     align-items: start;
 }
 
-/* SIDEBAR */
+/* =========================
+   SIDEBAR
+========================= */
 .sidebar {
     background: white;
     padding: 15px;
     border-radius: 12px;
+
     height: fit-content;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-.sidebar h3 {
+.sidebar-title {
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: bold;
 }
 
-/* LISTA CATEGORÍAS */
-.sidebar ul {
+/* =========================
+   CATEGORÍAS
+========================= */
+.category-list {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
-.sidebar li {
+.category-list li {
     padding: 10px;
     border-radius: 8px;
     cursor: pointer;
+
     background: #f9fafb;
-    transition: 0.2s;
+    transition: 0.2s ease;
+    font-size: 14px;
 }
 
-.sidebar li:hover {
+.category-list li:hover {
     background: #4f46e5;
     color: white;
     transform: translateX(4px);
 }
 
-/* BUSCADOR */
+/* =========================
+   SEARCH
+========================= */
 .search {
     display: flex;
     gap: 10px;
@@ -110,6 +167,7 @@ body {
 .search input {
     flex: 1;
     padding: 10px;
+
     border: 1px solid #ddd;
     border-radius: 10px;
     outline: none;
@@ -122,36 +180,47 @@ body {
 .search button {
     padding: 10px 15px;
     border: none;
+
     background: #4f46e5;
     color: white;
+
     border-radius: 10px;
     cursor: pointer;
-    transition: 0.2s;
+
+    transition: 0.2s ease;
+    font-weight: bold;
 }
 
 .search button:hover {
     background: #3730a3;
 }
 
-/* GRID PRODUCTOS */
+/* =========================
+   PRODUCTS GRID
+========================= */
 .products {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
 }
 
-/* CARD PRODUCTO */
+/* =========================
+   PRODUCT CARD
+========================= */
 .product-card {
     background: white;
     border-radius: 14px;
     padding: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: 0.25s;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    transition: 0.25s ease;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+
     gap: 10px;
 }
 
@@ -159,7 +228,7 @@ body {
     transform: translateY(-4px);
 }
 
-/* IMAGEN */
+/* IMAGE */
 .product-card img {
     width: 100%;
     height: 140px;
@@ -167,38 +236,42 @@ body {
     border-radius: 12px;
 }
 
-/* TITULO */
+/* TITLE */
 .product-card h3 {
     font-size: 16px;
     font-weight: bold;
 }
 
-/* DESCRIPCIÓN */
+/* DESCRIPTION */
 .product-card p {
     font-size: 13px;
     color: #6b7280;
     min-height: 40px;
 }
 
-/* PRECIO */
+/* PRICE */
 .product-card strong {
     font-size: 15px;
     color: #111827;
 }
 
-/* BOTÓN AGREGAR */
+/* =========================
+   BUTTON
+========================= */
 .add-btn {
     margin-top: auto;
+
     background: transparent;
     border: 2px solid #4f46e5;
     color: #4f46e5;
 
     padding: 8px 12px;
     border-radius: 999px;
-    cursor: pointer;
 
+    cursor: pointer;
     font-weight: bold;
-    transition: 0.25s;
+
+    transition: 0.25s ease;
 }
 
 .add-btn:hover {
@@ -207,11 +280,14 @@ body {
     transform: scale(1.05);
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 .footer {
     margin-top: 30px;
     background: #111827;
     color: white;
+
     text-align: center;
     padding: 20px;
 }

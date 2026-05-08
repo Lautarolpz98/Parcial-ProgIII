@@ -1,5 +1,6 @@
 import { checkAuhtUser, logout } from "../../../utils/auth";
 import { PRODUCTS, getCategories } from "../../../data/data";
+import { addToCart } from "../../../utils/cart";
 
 
 const buttonLogout = document.getElementById(
@@ -40,7 +41,29 @@ const renderProducts = () => {
     `;
 
     container.appendChild(card);
-  });
+  }
+
+  ),
+    container.addEventListener("click", (e) => {
+      const target = e.target as HTMLElement;
+
+      if (target.classList.contains("add-btn")) {
+        const id = Number(target.dataset.id);
+
+        const product = PRODUCTS.find(p => p.id === id);
+
+        if (!product) return;
+
+        addToCart({
+          id: product.id,
+          nombre: product.nombre,
+          precio: product.precio,
+          imagen: product.imagen,
+        });
+
+        console.log("Producto agregado al carrito 🚀");
+      }
+    });;
 };
 
 const categoryContainer = document.getElementById("lista-categorias") as HTMLElement;
