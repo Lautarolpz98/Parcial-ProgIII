@@ -1,30 +1,36 @@
 import type { IUser } from "../../../types/IUser";
-import type { Rol } from "../../../types/Rol";
+import { getUsers, saveUser } from "../../../utils/localStorage";
 import { navigate } from "../../../utils/navigate";
 
 const form = document.getElementById("form") as HTMLFormElement;
 const inputEmail = document.getElementById("email") as HTMLInputElement;
-//const inputPassword = document.getElementById("password") as HTMLInputElement;
-const selectRol = document.getElementById("rol") as HTMLSelectElement;
+const inputPassword = document.getElementById("password") as HTMLInputElement;
 
 form.addEventListener("submit", (e: SubmitEvent) => {
   e.preventDefault();
-  const valueEmail = inputEmail.value;
-  //const valuePassword = inputPassword.value;
-  const valueRol = selectRol.value as Rol;
 
-  if (valueRol === "admin") {
-    navigate("/src/pages/admin/home/home.html");
-  } else if (valueRol === "client") {
-    navigate("/src/pages/client/home/home.html");
+  const email = inputEmail.value.trim();
+  const password = inputPassword.value.trim();
+
+  // Buscamos en el array de usuarios registrados
+  const users = getUsers();
+  const usuarioEncontrado = users.find(
+    (u) => u.email === email && u.password === password
+  );
+
+  if (!usuarioEncontrado) {
+    alert("Email o contraseña incorrectos.");
+    return;
   }
 
-  const user: IUser = {
-    email: valueEmail,
-    role: valueRol,
-    loggedIn: true,
-  };
 
-  const parseUser = JSON.stringify(user);
-  localStorage.setItem("userData", parseUser);
+  const usuarioActivo: IUser = { ...usuarioEncontrado, loggedIn: true };
+  saveUser(usuarioActivo);
+
+  // Redirigimos según el rol
+  if (usuarioActivo.role === "admin") {
+    navigate("/src/pages/admin/home/home.html");
+  } else {
+    navigate("/src/pages/client/home/home.html");
+  }
 });
