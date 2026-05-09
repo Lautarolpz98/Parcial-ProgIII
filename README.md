@@ -36,8 +36,7 @@ Un cliente no puede acceder a la vista de admin, y viceversa. Si el usuario no e
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/chiro45/proteger_rutas
-cd proteger_rutas
+git clone https://github.com/Lautarolpz98/Parcial-ProgIII.git
 ```
 
 ### 2. Instalar dependencias
@@ -56,11 +55,6 @@ pnpm dev
 
 La aplicación estará disponible en `http://localhost:5173`
 
-### 4. Build para producción
-
-```bash
-pnpm build
-```
 
 ## Estructura del proyecto
 
