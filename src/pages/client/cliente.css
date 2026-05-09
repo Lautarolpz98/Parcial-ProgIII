@@ -280,3 +280,15 @@ body {
     font-size: 15px;
     padding: 40px 0;
 }
+.main {
+    min-height: calc(100vh - 140px);
+}
+ 
+.no-results {
+    grid-column: unset;
+    text-align: center;
+    color: #6b7280;
+    font-size: 15px;
+    padding: 40px 0;
+}
+ 

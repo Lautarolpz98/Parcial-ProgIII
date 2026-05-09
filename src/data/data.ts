@@ -118,7 +118,7 @@ export const PRODUCTS: Product[] = [
     descripcion: "Medallón de lentejas y garbanzo, cheddar vegano y rúcula",
     stock: 0,
     imagen: "pizza.jpg",
-    disponible: false,
+    disponible: true,
     categorias: [categorias[1]],
   },
   {
