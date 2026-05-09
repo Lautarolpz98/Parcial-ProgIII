@@ -8,18 +8,18 @@ export type CartItem = {
 
 const CART_KEY = "cart";
 
-/* ---------------- GET CART ---------------- */
+
 export const getCart = (): CartItem[] => {
     const data = localStorage.getItem(CART_KEY);
     return data ? JSON.parse(data) : [];
 };
 
-/* ---------------- SAVE CART ---------------- */
+
 export const saveCart = (cart: CartItem[]) => {
     localStorage.setItem(CART_KEY, JSON.stringify(cart));
 };
 
-/* ---------------- ADD PRODUCT ---------------- */
+
 export const addToCart = (product: {
     id: number;
     nombre: string;
@@ -45,7 +45,7 @@ export const addToCart = (product: {
     saveCart(cart);
 };
 
-/* ---------------- TOTAL ---------------- */
+
 export const getTotal = (): number => {
     const cart = getCart();
 

@@ -2,21 +2,26 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Carrito</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito 🛒</title>
   <link rel="stylesheet" href="/src/pages/cart/cart.css" />
 </head>
 
 <body>
 
-  <h1>🛒 Mi Carrito</h1>
+  <header class="cart-header">
+    <h1>🛒 Mi Carrito</h1>
+    <a href="/src/pages/client/home/home.html" class="btn-back">
+      ← Volver al catálogo
+    </a>
+  </header>
 
   <div id="cart-container"></div>
 
-  <h2>Total: <span id="cart-total">$0.00</span></h2>
-
-  <a href="/src/pages/admin/home/home.html">
-    Volver a productos
-  </a>
+  <div class="cart-footer">
+    <h2>Total: <span id="cart-total">$0.00</span></h2>
+    <button id="btn-clear" class="btn-clear">🗑 Vaciar carrito</button>
+  </div>
 
   <script type="module" src="./cart.ts"></script>
 

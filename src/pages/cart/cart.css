@@ -1,46 +1,74 @@
-/* =========================
-   BASE
-========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #f6f7fb;
-  margin: 0;
-  padding: 20px;
+  background: #f4f6f9;
   color: #222;
+  min-height: 100vh;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
+
+.cart-header {
+  background: #111827;
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-/* =========================
-   CONTENEDOR CARRITO
-========================= */
+.cart-header h1 {
+  font-size: 20px;
+  text-align: left;
+  margin: 0;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.btn-back:hover {
+  background: rgba(255,255,255,0.2);
+  text-decoration: none;
+}
+
 
 #cart-container {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 760px;
+  margin: 30px auto;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
 }
 
-/* =========================
-   ITEM DEL CARRITO
-========================= */
 
 .cart-item {
-  background: #fff;
-  border-radius: 12px;
-  padding: 15px 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-
+  background: white;
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-
+  align-items: center;
+  gap: 16px;
   transition: transform 0.2s ease;
 }
 
@@ -48,59 +76,133 @@ h1 {
   transform: translateY(-2px);
 }
 
-.cart-item h3 {
-  margin: 0;
+/* Info del producto */
+.cart-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cart-item-info h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.cart-item-info .item-price {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.cart-item-info .item-subtotal {
+  font-size: 15px;
+  font-weight: bold;
+  color: #4f46e5;
+}
+
+/* Controles de cantidad */
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-qty {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #4f46e5;
+  background: transparent;
+  color: #4f46e5;
   font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: 0.2s ease;
 }
 
-.cart-item p {
-  margin: 0;
-  color: #555;
+.btn-qty:hover {
+  background: #4f46e5;
+  color: white;
 }
 
-.cart-item strong {
-  margin-top: 5px;
-  color: #111;
-}
-
-/* =========================
-   TOTAL
-========================= */
-
-h2 {
+.item-qty {
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 24px;
   text-align: center;
-  margin-top: 30px;
-  font-size: 22px;
+}
+
+/* Botón eliminar */
+.btn-delete {
+  background: transparent;
+  border: 2px solid #ef4444;
+  color: #ef4444;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-delete:hover {
+  background: #ef4444;
+  color: white;
+}
+
+
+.empty-cart {
+  text-align: center;
+  color: #6b7280;
+  font-size: 18px;
+  padding: 60px 0;
+}
+
+.cart-footer {
+  max-width: 760px;
+  margin: 10px auto 40px;
+  padding: 20px 24px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-footer h2 {
+  font-size: 20px;
+  text-align: left;
+  margin: 0;
 }
 
 #cart-total {
-  color: #2e7d32;
+  color: #4f46e5;
   font-weight: bold;
 }
 
-/* =========================
-   LINK VOLVER
-========================= */
-
-a {
-  display: block;
-  text-align: center;
-  margin-top: 25px;
-  text-decoration: none;
-  color: #1976d2;
+.btn-clear {
+  background: transparent;
+  border: 2px solid #ef4444;
+  color: #ef4444;
+  padding: 8px 16px;
+  border-radius: 8px;
   font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s ease;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-/* =========================
-   EMPTY STATE (BONUS)
-========================= */
-
-#cart-container p {
-  text-align: center;
-  font-size: 18px;
-  color: #777;
+.btn-clear:hover {
+  background: #ef4444;
+  color: white;
 }

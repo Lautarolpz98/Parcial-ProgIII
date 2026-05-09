@@ -12,7 +12,6 @@ form.addEventListener("submit", (e: SubmitEvent) => {
   const email = inputEmail.value.trim();
   const password = inputPassword.value.trim();
 
-  // Buscamos en el array de usuarios registrados
   const users = getUsers();
   const usuarioEncontrado = users.find(
     (u) => u.email === email && u.password === password
@@ -27,7 +26,7 @@ form.addEventListener("submit", (e: SubmitEvent) => {
   const usuarioActivo: IUser = { ...usuarioEncontrado, loggedIn: true };
   saveUser(usuarioActivo);
 
-  // Redirigimos según el rol
+
   if (usuarioActivo.role === "admin") {
     navigate("/src/pages/admin/home/home.html");
   } else {

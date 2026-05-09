@@ -12,10 +12,10 @@ form.addEventListener("submit", (e: SubmitEvent) => {
     const email = inputEmail.value.trim();
     const password = inputPassword.value.trim();
 
-    // Leemos los usuarios ya registrados
+
     const users = getUsers();
 
-    // Verificamos que el email no esté duplicado
+
     const yaExiste = users.some((u) => u.email === email);
     if (yaExiste) {
         alert("Ya existe un usuario con ese email.");
