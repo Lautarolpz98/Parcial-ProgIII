@@ -1,3 +1,7 @@
+!!!!!!!ATENCION MUY IMPORTANTE!!!!!
+AL INGRESAR DEBERAN REGISTRARSE Y UTLIZAR ESAS CREDENCIALES PARA ACCEDER AL CATALOGO DE LO CONTRARIO NO PODRAN INGRESAR!!!
+
+
 # 🍔 Food Store 🍕
 
 Aplicación frontend de una tienda de comida desarrollada con HTML, CSS y TypeScript sobre Vite.
